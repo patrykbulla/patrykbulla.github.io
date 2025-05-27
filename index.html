@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patryk Bulla - Developer & IT Consultant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Patryk Bulla - Business Informatics Student, IT Consultant & Developer specializing in modern web applications and enterprise solutions. Currently pursuing B.Sc. at Fachhochschule Meschede.">
+    <meta name="keywords" content="Patryk Bulla, developer, IT consultant, business informatics, web development, Python, JavaScript, Germany, NRW, portfolio">
+    <meta name="author" content="Patryk Bulla">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://patryk-bulla.github.io/">
+    <meta property="og:title" content="Patryk Bulla - Developer & IT Consultant">
+    <meta property="og:description" content="Business Informatics Student, IT Consultant & Developer specializing in modern web applications and enterprise solutions.">
+    <meta property="og:site_name" content="Patryk Bulla's Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patryk Bulla - Developer & IT Consultant">
+    <meta name="twitter:description" content="Business Informatics Student, IT Consultant & Developer specializing in modern web applications.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>👨‍💻</text></svg>">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Patryk Bulla",
+        "jobTitle": ["IT Consultant", "Developer", "Business Informatics Student"],
+        "description": "Business Informatics Student, IT Consultant & Developer specializing in modern web applications and enterprise solutions.",
+        "url": "https://patryk-bulla.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/patryk-bulla/"
+        ],
+        "knowsAbout": ["Python", "JavaScript", "C#", "Java", "Web Development", "IT Consulting", "Business Informatics"],
+        "email": "patryk.work.business@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "North Rhine-Westphalia",
+            "addressCountry": "Germany"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Glassmorphism Theme */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: rgba(255, 255, 255, 0.9);
+            
+            --bg-primary: #f7fafc;
+            --bg-secondary: #edf2f7;
+            
+            --accent-primary: #667eea;
+            --accent-secondary: #764ba2;
+        }
+        
+        [data-theme="dark"] {
+            --glass-bg: rgba(0, 0, 0, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            
+            --text-primary: #f7fafc;
+            --text-secondary: #e2e8f0;
+            --text-light: rgba(255, 255, 255, 0.9);
+            
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            
+            --accent-primary: #7c3aed;
+            --accent-secondary: #8b5cf6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Glassmorphism Components */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .glass-header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        .nav-link:hover {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--secondary-gradient);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            padding: 3rem;
+            margin: 2rem 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--text-light);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-card {
+            padding: 2rem;
+            display: inline-block;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px) rotate(5deg);
+        }
+
+        .profile-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-text {
+            padding: 2rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .language-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .language-flag {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .language-level {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            opacity: 0.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .skill-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .skill-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: var(--accent-gradient);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            padding: 2rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-card {
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+        }
+
+        .timeline-card:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        /* Status Cards */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .status-card {
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+        }
+
+        .status-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .status-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .status-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .status-description {
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        /* Spotify Integration */
+        .spotify-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .spotify-player {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-player:hover {
+            transform: translateY(-5px);
+        }
+
+        .spotify-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .spotify-logo {
+            width: 40px;
+            height: 40px;
+            background: #1db954;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .spotify-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .now-playing {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .now-playing:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .track-cover {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .track-details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .track-name {
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .track-artist {
+            color: var(--text-light);
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .track-album {
+            color: var(--text-light);
+            opacity: 0.6;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .track-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-time {
+            color: var(--text-light);
+            opacity: 0.7;
+            font-size: 0.8rem;
+            min-width: 35px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background: #1db954;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #1db954;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .progress-bar:hover .progress::after {
+            opacity: 1;
+        }
+
+        .spotify-link {
+            color: #1db954;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-link:hover {
+            color: #1ed760;
+            transform: translateX(3px);
+        }
+
+        .music-note {
+            font-size: 1.2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .playing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1db954;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .sound-wave {
+            display: flex;
+            align-items: end;
+            gap: 2px;
+            height: 16px;
+        }
+
+        .wave-bar {
+            width: 3px;
+            background: #1db954;
+            border-radius: 1px;
+            animation: wave 1.5s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; height: 60%; }
+        .wave-bar:nth-child(2) { animation-delay: 0.2s; height: 80%; }
+        .wave-bar:nth-child(3) { animation-delay: 0.4s; height: 100%; }
+        .wave-bar:nth-child(4) { animation-delay: 0.6s; height: 70%; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.3); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .recent-tracks {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .recent-title {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .recent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-height: 280px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        /* Custom Scrollbar */
+        .recent-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .recent-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .recent-list::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 3px;
+            transition: background 0.3s ease;
+        }
+
+        .recent-list::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Firefox Scrollbar */
+        .recent-list {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-primary) rgba(255, 255, 255, 0.1);
+        }
+
+        .recent-track {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .recent-track:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+
+        .recent-cover {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-gradient);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .recent-info {
+            flex: 1;
+        }
+
+        .recent-name {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .recent-artist {
+            color: var(--text-light);
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-items: center;
+        }
+
+        .contact-card {
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 320px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            color: var(--text-light);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .contact-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            color: var(--text-light);
+            opacity: 0.9;
+            font-size: 1rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-weight: 500;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--text-light);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .footer p {
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .fade-in-delay {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .fade-in-delay-2 {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .language-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header glass-header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <span>👨‍💻</span>
+                Patryk Bulla
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#journey" class="nav-link">Journey</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-card glass">
+                        <h1 class="hero-title">Patryk Bulla</h1>
+                        <p class="hero-subtitle">Business Informatics Student • IT Consultant • Developer</p>
+                        <p class="hero-description">
+                            Passionate about technology and innovation, I'm pursuing a B.Sc. in Business Informatics at Fachhochschule Meschede while completing an IT Specialist apprenticeship at Atos/Eviden and earning an IT Consultant certification through Siemens Energy AG's Professional Education Program.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-primary">Discover More</a>
+                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know the person behind the code</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-image fade-in">
+                        <div class="profile-card glass">
+                            <div class="profile-placeholder">👨‍💻</div>
+                        </div>
+                    </div>
+                    <div class="about-text glass fade-in-delay">
+                        <h3>Hi, I'm Patryk!</h3>
+                        <p>
+                            I'm a passionate technology enthusiast from North Rhine-Westphalia, Germany, currently pursuing a B.Sc. in Business Informatics at Fachhochschule Meschede while simultaneously completing an apprenticeship as an IT Specialist in Application Development at Atos/Eviden and earning an IT Consultant certification through Siemens Energy AG's Professional Education Program.
+                        </p>
+                        <p>
+                            I'm fascinated by both hardware and software technologies and love experimenting with new innovations. I enjoy developing, creating, and building useful solutions that improve processes, structures, and complex environments.
+                        </p>
+                        <p>
+                            When I'm not coding, you'll find me engaged in sports, working on personal projects, exploring automotive technology, traveling, attending concerts, or spending quality time with friends.
+                        </p>
+                        
+                        <div class="language-grid">
+                            <div class="language-item">
+                                <div class="language-flag">🇩🇪</div>
+                                <div class="language-name">German</div>
+                                <div class="language-level">Native</div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-flag">🇵🇱</div>
+                                <div class="language-name">Polish</div>
+                                <div class="language-level">Native</div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-flag">🇺🇸</div>
+                                <div class="language-name">English</div>
+                                <div class="language-level">C1 Certificate</div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-flag">🇫🇷</div>
+                                <div class="language-name">French</div>
+                                <div class="language-level">Basics</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tags">
+                            <span class="tag">Tech Enthusiast</span>
+                            <span class="tag">Problem Solver</span>
+                            <span class="tag">Always Learning</span>
+                            <span class="tag">Creative Developer</span>
+                            <span class="tag">Music Lover</span>
+                            <span class="tag">Multilingual</span>
+                            <span class="tag">Innovation Driven</span>
+                            <span class="tag">Team Player</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">The tools and technologies I work with</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card glass fade-in">
+                        <div class="skill-icon">💻</div>
+                        <h3>Programming Languages</h3>
+                        <p>Core programming languages I work with daily</p>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">C#</span>
+                            <span class="skill-item">C/C++</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Dart</span>
+                        </div>
+                    </div>
+                    <div class="skill-card glass fade-in-delay">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>Database & Backend</h3>
+                        <p>Server-side technologies and database management</p>
+                        <div class="skill-list">
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">PL/SQL</span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Git</span>
+                        </div>
+                    </div>
+                    <div class="skill-card glass fade-in-delay-2">
+                        <div class="skill-icon">📱</div>
+                        <h3>Frameworks & Development</h3>
+                        <p>Modern frameworks for efficient development</p>
+                        <div class="skill-list">
+                            <span class="skill-item">Flutter</span>
+                            <span class="skill-item">WPF</span>
+                            <span class="skill-item">Capacitor</span>
+                            <span class="skill-item">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-card glass fade-in">
+                        <div class="skill-icon">🏢</div>
+                        <h3>Business & Management</h3>
+                        <p>Enterprise solutions and methodologies</p>
+                        <div class="skill-list">
+                            <span class="skill-item">ITIL</span>
+                            <span class="skill-item">SCRUM</span>
+                            <span class="skill-item">SAP ERP</span>
+                            <span class="skill-item">MS Office</span>
+                            <span class="skill-item">Linux</span>
+                        </div>
+                    </div>
+                    <div class="skill-card glass fade-in-delay">
+                        <div class="skill-icon">⚡</div>
+                        <h3>And Much More...</h3>
+                        <p>Additional skills and technologies in my toolkit</p>
+                        <div class="skill-list">
+                            <span class="skill-item">Cloud Platforms</span>
+                            <span class="skill-item">API Development</span>
+                            <span class="skill-item">Testing</span>
+                            <span class="skill-item">DevOps</span>
+                            <span class="skill-item">+ Many Others</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Current Projects</h2>
+                    <p class="section-subtitle">A showcase of my recent work and developments</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass">
+                        <span class="project-emoji">🛠️</span>
+                        <h3 class="project-title">Custom Software Solutions</h3>
+                        <p class="project-description">
+                            Development of personalized software solutions including mobile applications, web platforms, desktop tools, and custom plugins tailored to specific business needs and user requirements.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">WPF</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass">
+                        <span class="project-emoji">🎮</span>
+                        <h3 class="project-title">Game Development Projects</h3>
+                        <p class="project-description">
+                            Creating original games from concept to completion, as well as developing game modifications, extensions, and supporting tools for existing games to enhance player experience.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">Game Design</span>
+                            <span class="tech-tag">Modding</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass">
+                        <span class="project-emoji">🏃‍♂️</span>
+                        <h3 class="project-title">Sports Festival App</h3>
+                        <p class="project-description">
+                            A comprehensive sports festival management application for data recording, organization, and management. Designed for both event organizers and supervisors with real-time capabilities.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Capacitor</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass">
+                        <span class="project-emoji">🤖</span>
+                        <h3 class="project-title">Ivy Discord Bot</h3>
+                        <p class="project-description">
+                            A versatile all-in-one Discord bot designed for both regular users and administrators. Features include server management, user utilities, and custom functionality.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Discord.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass">
+                        <span class="project-emoji">🎨</span>
+                        <h3 class="project-title">Custom Discord Theme</h3>
+                        <p class="project-description">
+                            A personalized Discord theme that runs through various plugins, enhancing the user interface with custom styling and improved user experience.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass">
+                        <span class="project-emoji">📱</span>
+                        <h3 class="project-title">Small App Projects</h3>
+                        <p class="project-description">
+                            Various smaller applications and utilities I've developed to solve specific problems or explore new technologies. Always working on something new!
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Various</span>
+                            <span class="tech-tag">Experimental</span>
+                            <span class="tech-tag">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Journey</h2>
+                    <p class="section-subtitle">The path that brought me to where I am today</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-card glass">
+                            <div class="timeline-date">2027 - Future</div>
+                            <h3 class="timeline-title">Career Opportunities</h3>
+                            <p class="timeline-description">Looking forward to exciting opportunities in the IT industry, potentially joining innovative companies to contribute to cutting-edge projects and further develop my expertise.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-card glass">
+                            <div class="timeline-date">2023 - Present</div>
+                            <h3 class="timeline-title">Triple Education Path</h3>
+                            <p class="timeline-description">Currently pursuing B.Sc. Business Informatics at Fachhochschule Meschede, completing IT Specialist apprenticeship at Atos/Eviden, and earning IT Consultant certification through Siemens Energy AG's Professional Education Program.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-card glass">
+                            <div class="timeline-date">2023</div>
+                            <h3 class="timeline-title">High School Graduate</h3>
+                            <p class="timeline-description">Successfully completed Abitur in Germany, laying the foundation for my higher education and professional development in the IT field.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What I'm Up To</h2>
+                    <p class="section-subtitle">Current activities and ongoing interests</p>
+                </div>
+                <div class="status-grid">
+                    <div class="status-card glass">
+                        <span class="status-emoji">🎓</span>
+                        <h3 class="status-title">Currently Studying</h3>
+                        <p class="status-description">B.Sc. Business Informatics at Fachhochschule Meschede + IT Specialist Apprenticeship at Atos/Eviden + IT Consultant Certification at Siemens Energy AG</p>
+                    </div>
+                    <div class="status-card glass">
+                        <span class="status-emoji">🎵</span>
+                        <h3 class="status-title">Currently Listening</h3>
+                        <p class="status-description">Hip Hop, J-Pop, Alternative Rock, and exploring new genres that inspire creativity and focus during coding sessions</p>
+                    </div>
+                    <div class="status-card glass">
+                        <span class="status-emoji">🚀</span>
+                        <h3 class="status-title">Currently Building</h3>
+                        <p class="status-description">Working on innovative projects that solve real-world problems and enhance user experiences across various platforms</p>
+                    </div>
+                    <div class="status-card glass">
+                        <span class="status-emoji">🌱</span>
+                        <h3 class="status-title">Always Learning</h3>
+                        <p class="status-description">Exploring new technologies, methodologies, and staying updated with the latest industry trends and best practices</p>
+                    </div>
+                    <div class="status-card glass">
+                        <span class="status-emoji">🗺️</span>
+                        <h3 class="status-title">Always Exploring</h3>
+                        <p class="status-description">Constantly traveling and seeking new perspectives, discovering innovative approaches and improvement opportunities in different environments and cultures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="spotify-section">
+            <div class="container">
+                <div class="spotify-player glass">
+                    <div class="spotify-header">
+                        <div class="spotify-logo">♪</div>
+                        <h3 class="spotify-title">Currently Listening</h3>
+                    </div>
+                    
+                    <div class="playing-indicator">
+                        <div class="sound-wave">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                        <span>Now Playing</span>
+                    </div>
+                    
+                    <div class="now-playing" id="nowPlaying">
+                        <!-- Content wird von JavaScript gefüllt -->
+                    </div>
+                    
+                    <div class="recent-tracks">
+                        <h4 class="recent-title">Recently Played</h4>
+                        <div class="recent-list" id="recentTracks">
+                            <!-- Content wird von JavaScript gefüllt -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Connect!</h2>
+                    <p class="section-subtitle">Ready to start a conversation? Reach out through any of these channels</p>
+                </div>
+                <div class="contact-grid">
+                    <a href="mailto:patryk.work.business@gmail.com" class="contact-card glass">
+                        <span class="contact-icon">📧</span>
+                        <h3 class="contact-title">Email</h3>
+                        <p class="contact-info">patryk.work.business@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/patryk-bulla/" target="_blank" rel="noopener noreferrer" class="contact-card glass">
+                        <span class="contact-icon">💼</span>
+                        <h3 class="contact-title">LinkedIn</h3>
+                        <p class="contact-info">linkedin.com/in/patryk-bulla</p>
+                    </a>
+                    <a href="https://github.com/giffynuss" target="_blank" rel="noopener noreferrer" class="contact-card glass">
+                        <span class="contact-icon">🐙</span>
+                        <h3 class="contact-title">GitHub</h3>
+                        <p class="contact-info">github.com/giffynuss</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Patryk Bulla. Crafted with ❤️ and lots of ☕</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.9rem;">
+                Last updated: <span id="lastUpdated">January 2025</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Management
+        let currentTheme = 'light';
+
+        function initTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (!themeToggle || !themeIcon) return;
+
+            // Check system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                currentTheme = 'dark';
+                applyTheme('dark');
+            }
+
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        function toggleTheme() {
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            currentTheme = newTheme;
+            applyTheme(newTheme);
+        }
+
+        function applyTheme(theme) {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+
+            if (theme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.textContent = '☀️';
+            } else {
+                body.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.textContent = '🌙';
+            }
+        }
+
+        // Back to Top Button
+        function initBackToTop() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (!backToTopButton) return;
+
+            function toggleBackToTop() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            window.addEventListener('scroll', toggleBackToTop);
+            backToTopButton.addEventListener('click', scrollToTop);
+        }
+
+        // Smooth scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Intersection Observer for animations
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        element.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.glass, .fade-in, .fade-in-delay, .fade-in-delay-2').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Enhanced interactions
+        function initInteractions() {
+            // Add subtle parallax effect to hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+            });
+
+            // Add tilt effect to cards on mouse move
+            document.querySelectorAll('.glass').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+
+        // Error handling wrapper
+        function safeExecution(fn, fallback) {
+            try {
+                return fn();
+            } catch (error) {
+                console.error('Script error:', error);
+                if (fallback) fallback();
+                return null;
+            }
+        }
+
+        // Initialize everything
+        function init() {
+            safeExecution(initTheme);
+            safeExecution(initBackToTop);
+            safeExecution(initSmoothScrolling);
+            safeExecution(initAnimations);
+            safeExecution(initInteractions);
+            safeExecution(updateLastUpdated);
+            safeExecution(initSpotify);
+        }
+
+        // Update last updated timestamp
+        function updateLastUpdated() {
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            if (lastUpdatedElement) {
+                const now = new Date();
+                const options = { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric'
+                };
+                lastUpdatedElement.textContent = now.toLocaleDateString('en-US', options);
+            }
+        }
+
+        // Spotify Mock Integration
+        class SpotifyMockPlayer {
+            constructor() {
+                // 🎵 DEINE AKTUELLE MUSIK! 🎵
+                this.currentTrack = {
+                    isPlaying: true,
+                    name: "Stronger",
+                    artist: "TheFatRat, Slaydit, Anjulie",
+                    album: "Stronger - Single",
+                    image: "https://i.scdn.co/image/ab67616d0000b273d0127c6e8fef2e5c2806c51b", // TheFatRat - Stronger
+                    spotifyUrl: "https://open.spotify.com/track/0iTI5FTB9iEUtcMdx9YyZS",
+                    duration: 214000, // 3:34
+                    progress: 127000 // Bei 2:07
+                };
+
+                // 🎶 DEINE RECENT TRACKS 🎶
+                this.recentTracks = [
+                    {
+                        name: "Red Like Roses Pt. 2",
+                        artist: "Jeff Williams, Casey Lee Williams, Sandy Casey",
+                        image: "https://i.scdn.co/image/ab67616d0000b273c8c0f38702e83e5901a2b025", // RWBY Soundtrack
+                        spotifyUrl: "https://open.spotify.com/track/6h9BqyYaqBHXn6jshAoNm4"
+                    },
+                    {
+                        name: "Rise Up",
+                        artist: "TheFatRat",
+                        image: "https://i.scdn.co/image/ab67616d0000b273b48df2e0c1ade5e5b6db8065", // TheFatRat - Rise Up
+                        spotifyUrl: "https://open.spotify.com/track/6inzGTxyGsXVjpVKtFGrcE"
+                    },
+                    {
+                        name: "Midnight City",
+                        artist: "M83",
+                        image: "https://i.scdn.co/image/ab67616d0000b273bb23c0dc5c147dce2b7c3a8e", // M83 - Hurry Up We're Dreaming
+                        spotifyUrl: "https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hq9"
+                    },
+                    {
+                        name: "Renegades",
+                        artist: "ONE OK ROCK",
+                        image: "https://i.scdn.co/image/ab67616d0000b273f2b2b1b8b0c9b1a8e7d5f5b6", // ONE OK ROCK - Ambitions
+                        spotifyUrl: "https://open.spotify.com/track/5o26lUmCY1740Unf5hkTik"
+                    },
+                    {
+                        name: "Schodki",
+                        artist: "Mata",
+                        image: "https://i.scdn.co/image/ab67616d0000b273a5a8c5c1c1c1c1c1c1c1c1c1", // Mata - Polish Rap
+                        spotifyUrl: "https://open.spotify.com/track/0vPVqOKo8LWVganQgBZS5y"
+                    },
+                    {
+                        name: "Policeman (feat. Jambojet, USPM)",
+                        artist: "Jamal, Jambojet, USPM",
+                        image: "https://i.scdn.co/image/ab67616d0000b273c8b8c8b8c8b8c8b8c8b8c8b8", // Hip-Hop/Rap Cover
+                        spotifyUrl: "https://open.spotify.com/track/5bTRw958W3Gf95RwXgJ2ql"
+                    },
+                    {
+                        name: "Tokyo",
+                        artist: "Dwin, Kush Kush",
+                        image: "https://i.scdn.co/image/ab67616d0000b273e1e1e1e1e1e1e1e1e1e1e1e1", // Electronic/Future Bass
+                        spotifyUrl: "https://open.spotify.com/track/4obMuJXFa9APNiFtlQHFBh"
+                    }
+                ];
+
+                this.isPlaying = true;
+                this.init();
+            }
+
+            init() {
+                this.renderCurrentTrack();
+                this.renderRecentTracks();
+                this.startProgressAnimation();
+
+                // Simuliere gelegentliche Track-Wechsel (alle 3-4 Minuten)
+                setInterval(() => this.simulateTrackChange(), 180000 + Math.random() * 60000);
+            }
+
+            renderCurrentTrack() {
+                const container = document.getElementById('nowPlaying');
+                if (!container) return;
+
+                const progressPercent = (this.currentTrack.progress / this.currentTrack.duration) * 100;
+                const currentTime = this.formatTime(this.currentTrack.progress);
+                const totalTime = this.formatTime(this.currentTrack.duration);
+
+                container.innerHTML = `
+                    <div class="track-info">
+                        <div class="track-cover" style="background-image: url('${this.currentTrack.image}')">
+                            ${!this.currentTrack.image ? '🎵' : ''}
+                        </div>
+                        <div class="track-details">
+                            <div class="track-name">${this.currentTrack.name}</div>
+                            <div class="track-artist">${this.currentTrack.artist}</div>
+                            <div class="track-album">${this.currentTrack.album}</div>
+                        </div>
+                    </div>
+                    <div class="track-controls">
+                        <div class="progress-container">
+                            <span class="progress-time">${currentTime}</span>
+                            <div class="progress-bar" onclick="spotifyPlayer.seekTo(event)">
+                                <div class="progress" style="width: ${progressPercent}%"></div>
+                            </div>
+                            <span class="progress-time">${totalTime}</span>
+                        </div>
+                        <a href="${this.currentTrack.spotifyUrl}" target="_blank" class="spotify-link">
+                            🎧 Open in Spotify
+                        </a>
+                    </div>
+                `;
+            }
+
+            renderRecentTracks() {
+                const container = document.getElementById('recentTracks');
+                if (!container) return;
+
+                container.innerHTML = this.recentTracks.map(track => `
+                    <div class="recent-track" onclick="window.open('${track.spotifyUrl}', '_blank')">
+                        <div class="recent-cover" style="background-image: url('${track.image}')">
+                            ${!track.image ? '🎵' : ''}
+                        </div>
+                        <div class="recent-info">
+                            <div class="recent-name">${track.name}</div>
+                            <div class="recent-artist">${track.artist}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            startProgressAnimation() {
+                if (!this.isPlaying) return;
+
+                setInterval(() => {
+                    if (this.isPlaying && this.currentTrack.progress < this.currentTrack.duration) {
+                        this.currentTrack.progress += 1000; // +1 Sekunde
+                        this.updateProgress();
+                        
+                        // Wenn Song zu Ende, zum nächsten wechseln
+                        if (this.currentTrack.progress >= this.currentTrack.duration) {
+                            this.simulateTrackChange();
+                        }
+                    }
+                }, 1000);
+            }
+
+            updateProgress() {
+                const progressBar = document.querySelector('.progress');
+                const currentTimeElement = document.querySelectorAll('.progress-time')[0];
+                
+                if (progressBar && currentTimeElement) {
+                    const progressPercent = (this.currentTrack.progress / this.currentTrack.duration) * 100;
+                    progressBar.style.width = progressPercent + '%';
+                    currentTimeElement.textContent = this.formatTime(this.currentTrack.progress);
+                }
+            }
+
+            togglePlayPause() {
+                // Funktion entfernt - kein Button mehr vorhanden
+                // Behalte die Funktion für mögliche zukünftige Verwendung
+                this.isPlaying = !this.isPlaying;
+                console.log(`🎵 Playback ${this.isPlaying ? 'resumed' : 'paused'}`);
+            }
+
+            seekTo(event) {
+                const progressBar = event.currentTarget;
+                const rect = progressBar.getBoundingClientRect();
+                const clickX = event.clientX - rect.left;
+                const percentage = clickX / rect.width;
+                
+                this.currentTrack.progress = Math.floor(this.currentTrack.duration * percentage);
+                this.updateProgress();
+            }
+
+            simulateTrackChange() {
+                // Liste aller verfügbaren Songs (Current + Recent)
+                const allTracks = [
+                    {
+                        name: "Red Like Roses Pt. 2",
+                        artist: "Jeff Williams, Casey Lee Williams, Sandy Casey",
+                        album: "RWBY Volume 1 Soundtrack",
+                        image: "https://i.scdn.co/image/ab67616d0000b273c8c0f38702e83e5901a2b025",
+                        spotifyUrl: "https://open.spotify.com/track/6h9BqyYaqBHXn6jshAoNm4",
+                        duration: 298000 // 4:58
+                    },
+                    {
+                        name: "Rise Up",
+                        artist: "TheFatRat",
+                        album: "Rise Up - Single",
+                        image: "https://i.scdn.co/image/ab67616d0000b273b48df2e0c1ade5e5b6db8065",
+                        spotifyUrl: "https://open.spotify.com/track/6inzGTxyGsXVjpVKtFGrcE",
+                        duration: 195000 // 3:15
+                    },
+                    {
+                        name: "Midnight City",
+                        artist: "M83",
+                        album: "Hurry Up, We're Dreaming",
+                        image: "https://i.scdn.co/image/ab67616d0000b273bb23c0dc5c147dce2b7c3a8e",
+                        spotifyUrl: "https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hq9",
+                        duration: 244000 // 4:04
+                    },
+                    {
+                        name: "Renegades",
+                        artist: "ONE OK ROCK",
+                        album: "Ambitions",
+                        image: "https://i.scdn.co/image/ab67616d0000b273f2b2b1b8b0c9b1a8e7d5f5b6",
+                        spotifyUrl: "https://open.spotify.com/track/5o26lUmCY1740Unf5hkTik",
+                        duration: 201000 // 3:21
+                    },
+                    {
+                        name: "Schodki",
+                        artist: "Mata",
+                        album: "Schodki - Single",
+                        image: "https://i.scdn.co/image/ab67616d0000b273a5a8c5c1c1c1c1c1c1c1c1c1",
+                        spotifyUrl: "https://open.spotify.com/track/0vPVqOKo8LWVganQgBZS5y",
+                        duration: 189000 // 3:09
+                    },
+                    {
+                        name: "Policeman (feat. Jambojet, USPM)",
+                        artist: "Jamal, Jambojet, USPM",
+                        album: "Policeman - Single",
+                        image: "https://i.scdn.co/image/ab67616d0000b273c8b8c8b8c8b8c8b8c8b8c8b8",
+                        spotifyUrl: "https://open.spotify.com/track/5bTRw958W3Gf95RwXgJ2ql",
+                        duration: 176000 // 2:56
+                    },
+                    {
+                        name: "Tokyo",
+                        artist: "Dwin, Kush Kush",
+                        album: "Tokyo - Single",
+                        image: "https://i.scdn.co/image/ab67616d0000b273e1e1e1e1e1e1e1e1e1e1e1e1",
+                        spotifyUrl: "https://open.spotify.com/track/4obMuJXFa9APNiFtlQHFBh",
+                        duration: 187000 // 3:07
+                    }
+                ];
+                
+                // Wähle zufälligen Track (außer dem aktuell spielenden)
+                const availableTracks = allTracks.filter(track => track.name !== this.currentTrack.name);
+                const randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
+                
+                // Update current track
+                this.currentTrack = {
+                    ...randomTrack,
+                    isPlaying: true,
+                    progress: Math.floor(Math.random() * (randomTrack.duration * 0.3)) // Zufällige Position im ersten Drittel
+                };
+
+                this.renderCurrentTrack();
+                
+                // Console log für Entwicklung
+                console.log(`🎵 Now playing: ${this.currentTrack.name} by ${this.currentTrack.artist}`);
+            }
+
+            formatTime(ms) {
+                const minutes = Math.floor(ms / 60000);
+                const seconds = Math.floor((ms % 60000) / 1000);
+                return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            // 🎵 EINFACHE METHODEN ZUM AKTUALISIEREN DER MUSIK 🎵
+            updateCurrentTrack(trackData) {
+                this.currentTrack = { ...this.currentTrack, ...trackData };
+                this.renderCurrentTrack();
+            }
+
+            addRecentTrack(trackData) {
+                this.recentTracks.unshift(trackData);
+                if (this.recentTracks.length > 4) {
+                    this.recentTracks.pop();
+                }
+                this.renderRecentTracks();
+            }
+        }
+
+        // Initialize Spotify Player
+        let spotifyPlayer;
+        function initSpotify() {
+            spotifyPlayer = new SpotifyMockPlayer();
+            
+            // Mache es global verfügbar für einfache Updates
+            window.spotifyPlayer = spotifyPlayer;
+        }
+
+        // Start when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
